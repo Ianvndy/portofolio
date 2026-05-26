@@ -135,7 +135,7 @@ html{scroll-behavior:smooth}
 
 /* BUG FIX 2: project card image */
 .proj-thumb{width:100%;height:100%;object-fit:cover;display:block}
-.proj-thumb-wrap{position:relative;height:56.25%;overflow:hidden}
+.proj-thumb-wrap{position:relative;height:50%;overflow:hidden}
 .proj-thumb-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.55) 0%,transparent 50%)}
 
 @media(max-width:960px){
@@ -220,9 +220,9 @@ export default function Portfolio() {
 
         {/* BUG FIX 1: explicit color on h1 */}
         <h1 style={{ fontFamily:"'Syne',sans-serif", fontSize:"clamp(52px,9.5vw,120px)", fontWeight:"800", lineHeight:"0.92", letterSpacing:"-0.025em", marginBottom:"40px", color: textColor }}>
-          Aan<br />
-          <span style={{ color: accentTextColor }}>Shandy</span><br />
-          Rahesa.
+          Ian<br />
+          <span style={{ color: accentTextColor }}>Projects</span><br />
+          Portofolio.
         </h1>
 
         <div style={{ display:"flex", gap:"64px", marginBottom:"48px", flexWrap:"wrap" }}>
