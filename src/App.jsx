@@ -135,7 +135,7 @@ html{scroll-behavior:smooth}
 
 /* BUG FIX 2: project card image */
 .proj-thumb{width:100%;height:100%;object-fit:cover;display:block}
-.proj-thumb-wrap{position:relative;height:50%;overflow:hidden}
+.proj-thumb-wrap{position:relative;height:56.25%;overflow:hidden}
 .proj-thumb-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.55) 0%,transparent 50%)}
 
 @media(max-width:960px){
