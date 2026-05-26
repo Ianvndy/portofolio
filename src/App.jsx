@@ -351,7 +351,7 @@ export default function Portfolio() {
                 if (!form.name || !form.email || !form.message) return alert("Lengkapi semua field dulu ya!");
                 setSending(true);
                 emailjs.send(
-                  "service_y3eaq1j",
+                  "service_atd1o5w",
                   "template_d9283if",
                   { name: form.name, email: form.email, message: form.message },
                   "DkrlGV0f1OzDScYz_"
