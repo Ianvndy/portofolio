@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 const DARK = {
   "--bg":  "#1C1C1C", "--bg2": "#242424", "--br":  "#303030",
   "--t":   "#F2F2F2", "--t2":  "#9C9C9C", "--t3":  "#3E3E3E",
-  "--at":  "#D4FF00", "--a":   "#D4FF00", "--sn":  "#272727",
+  "--at":  "#ffa600", "--a":   "#ffa600", "--sn":  "#272727",
   "--nb":  "rgba(28,28,28,0.92)",
   "--tk":  "#1E1E1E", "--tkb": "#2A2A2A", "--tkc": "#686868",
   "--inp": "#242424",
@@ -13,33 +13,69 @@ const DARK = {
 const LIGHT = {
   "--bg":  "#ECEAE6", "--bg2": "#E3E1DC", "--br":  "#CDCBC7",
   "--t":   "#141414", "--t2":  "#606060", "--t3":  "#ABABAB",
-  "--at":  "#5E7200", "--a":   "#D4FF00", "--sn":  "#DEDAD6",
+  "--at":  "#ffa600", "--a":   "#ffa600", "--sn":  "#DEDAD6",
   "--nb":  "rgba(236,234,230,0.92)",
   "--tk":  "#D7D5D1", "--tkb": "#CDCBC7", "--tkc": "#5A5A5A",
   "--inp": "#E3E1DC",
 };
 
 const PROJECTS = [
-  { id:1, title:"Project Title 1", desc:"Deskripsi singkat — apa yang dilakukan proyek ini, masalah yang diselesaikan, dan teknologi utamanya.", tags:["React","Node.js","MongoDB"],   github:"#", live:"#",  bg:"#08082a", ac:"#4466ff" },
-  { id:2, title:"Project Title 2", desc:"Deskripsi singkat — apa yang dilakukan proyek ini, masalah yang diselesaikan, dan teknologi utamanya.", tags:["Next.js","Tailwind","PostgreSQL"],github:"#", live:null, bg:"#082008", ac:"#22cc55" },
-  { id:3, title:"Project Title 3", desc:"Deskripsi singkat — apa yang dilakukan proyek ini, masalah yang diselesaikan, dan teknologi utamanya.", tags:["Vue.js","Express","Firebase"],    github:"#", live:"#",  bg:"#1a0808", ac:"#ff4455" },
-  { id:4, title:"Project Title 4", desc:"Deskripsi singkat — apa yang dilakukan proyek ini, masalah yang diselesaikan, dan teknologi utamanya.", tags:["React","TypeScript","Supabase"],  github:"#", live:null, bg:"#0e0820", ac:"#aa44ff" },
+  {
+    id: 1,
+    title: "SPK Shabat",
+    desc: "Sistem Pendukung Keputusan berbasis web untuk membantu proses seleksi dan rekomendasi, dibangun sebagai project magang menggunakan Laravel.",
+    tags: ["Laravel", "PHP", "Blade", "MySQL"],
+    github: "https://github.com/Ianvndy/spkshabat",
+    live: null,
+    img: "/projects/spk.jpg",
+    bg: "#08082a", ac: "#4466ff"
+  },
+  {
+    id: 2,
+    title: "SkincareAuth",
+    desc: "Sistem autentikasi produk skincare berbasis QR Code dengan Laravel 11. Setiap scan tercatat dan terverifikasi dari generated, validated, hingga purchased.",
+    tags: ["Laravel 11", "QR Code", "MySQL", "Tailwind CSS"],
+    github: "https://github.com/Ianvndy/skincareauth",
+    live: null,
+    img: "/projects/auth.jpg",
+    bg: "#082008", ac: "#22cc55"
+  },
+  {
+    id: 3,
+    title: "Belleza Beauty",
+    desc: "Sistem booking online dan manajemen antrian untuk salon kecantikan di Kartasura. Fitur realtime slot, notifikasi WhatsApp, dan dashboard admin lengkap.",
+    tags: ["Laravel 11", "Blade", "MySQL", "WhatsApp API"],
+    github: "https://github.com/Ianvndy/bellezabeauty",
+    live: null,
+    img: "/projects/belleza.jpg",
+    bg: "#1a0808", ac: "#ff4455"
+  },
+  {
+    id: 4,
+    title: "Remake Web",
+    desc: "Project redesign website, membangun ulang tampilan dan struktur web yang sudah ada menjadi lebih modern, responsif, dan performatif.",
+    tags: ["Laravel", "PHP", "CSS", "JavaScript"],
+    github: "https://github.com/Ianvndy/remakeweb",
+    live: null,
+    img: "/projects/shabat.jpg",
+    bg: "#0e0820", ac: "#aa44ff"
+  },
 ];
 
 const DESIGNS = [
-  { id:1, title:"Brand Identity — Client Name", h:280, c1:"#ff6b35", c2:"#180500" },
-  { id:2, title:"Poster Series",                h:200, c1:"#00bcd4", c2:"#001418" },
-  { id:3, title:"UI Kit Design",                h:250, c1:"#9c27b0", c2:"#0a0012" },
-  { id:4, title:"Social Media Kit",             h:200, c1:"#4caf50", c2:"#001a02" },
-  { id:5, title:"Event Branding",               h:260, c1:"#ff9800", c2:"#150800" },
-  { id:6, title:"Typography Poster",            h:200, c1:"#e91e63", c2:"#150008" },
+  { id:1, title:"Brand Identity",      h:280, c1:"#ff6b35", c2:"#180500" },
+  { id:2, title:"Poster Series",       h:200, c1:"#00bcd4", c2:"#001418" },
+  { id:3, title:"UI Kit Design",       h:250, c1:"#9c27b0", c2:"#0a0012" },
+  { id:4, title:"Social Media Kit",    h:200, c1:"#4caf50", c2:"#001a02" },
+  { id:5, title:"Event Branding",      h:260, c1:"#ff9800", c2:"#150800" },
+  { id:6, title:"Typography Poster",   h:200, c1:"#e91e63", c2:"#150008" },
 ];
 
 const SKILLS = [
-  { cat:"Frontend", items:["React", "Next.js", "TypeScript", "Tailwind CSS"] },
-  { cat:"Backend",  items:["Node.js", "Express.js", "PostgreSQL", "MongoDB"] },
-  { cat:"Design",   items:["Figma", "Illustrator", "Photoshop", "InDesign"] },
-  { cat:"Tools",    items:["Git / GitHub", "Vercel", "VS Code", "Docker"] },
+  { cat:"Frontend", items:["React", "Next.js", "Tailwind CSS", "Blade", "JavaScript"] },
+  { cat:"Backend",  items:["Laravel", "Node.js", "MySQL", "REST API"] },
+  { cat:"Design",   items:["Photoshop", "Canva"] },
+  { cat:"Tools",    items:["Git / GitHub", "Vercel", "VS Code", "Claude"] },
 ];
 
 const CSS = `
@@ -97,6 +133,11 @@ html{scroll-behavior:smooth}
 .agrid{display:grid;grid-template-columns:1fr 1fr;gap:80px}
 .sgrid{display:grid;grid-template-columns:1fr 1fr;gap:32px 24px}
 
+/* BUG FIX 2: project card image */
+.proj-thumb{width:100%;height:100%;object-fit:cover;display:block}
+.proj-thumb-wrap{position:relative;height:56.25%;overflow:hidden}
+.proj-thumb-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.55) 0%,transparent 50%)}
+
 @media(max-width:960px){
   .pgrid{grid-template-columns:1fr}
   .dcols{column-count:2}
@@ -120,6 +161,12 @@ export default function Portfolio() {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const thm = theme === "dark" ? DARK : LIGHT;
+
+  // BUG FIX 1: derive explicit text color from theme for headings
+  const textColor = thm["--t"];
+  const textColor2 = thm["--t2"];
+  const textColor3 = thm["--t3"];
+  const accentTextColor = thm["--at"];
 
   useEffect(() => {
     const onScroll = () => {
@@ -146,16 +193,16 @@ export default function Portfolio() {
   const go = id => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <div style={{ ...thm, background:"var(--bg)", color:"var(--t)", minHeight:"100vh", fontFamily:"'DM Sans',sans-serif", transition:"background 0.35s,color 0.35s" }}>
+    <div style={{ ...thm, background:"var(--bg)", color: textColor, minHeight:"100vh", fontFamily:"'DM Sans',sans-serif", transition:"background 0.35s,color 0.35s" }}>
       <style>{CSS}</style>
 
       {/* ── NAV ─────────────────────────────────────────── */}
       <nav style={{ position:"fixed", top:0, left:0, right:0, zIndex:100, padding:"20px 52px", display:"flex", alignItems:"center", justifyContent:"space-between", background: scrolled ? "var(--nb)" : "transparent", backdropFilter: scrolled ? "blur(18px)" : "none", borderBottom:`1px solid ${scrolled ? "var(--br)" : "transparent"}`, transition:"all 0.3s" }}>
-        <button className="nb" onClick={() => go("home")} style={{ color:"var(--at)", fontSize:"15px", fontWeight:"800", fontFamily:"'Syne',sans-serif", letterSpacing:0 }}>
-          YN<span style={{ color:"var(--t3)" }}>.</span>
+        <button className="nb" onClick={() => go("home")} style={{ color: accentTextColor, fontSize:"15px", fontWeight:"800", fontFamily:"'Syne',sans-serif", letterSpacing:0 }}>
+          Ianz Dev<span style={{ color: textColor3 }}>.</span>
         </button>
         <div style={{ display:"flex", gap:"28px", alignItems:"center" }}>
-          {[["about","About"],["projects","Projects"],["design","Design"],["contact","Contact"]].map(([id,label]) => (
+          {[["about","About"],["projects","Projects"],["contact","Contact"]].map(([id,label]) => (
             <button key={id} className={`nb${active===id?" on":""}`} onClick={() => go(id)}>{label}</button>
           ))}
           <button className="tgl" onClick={() => setTheme(t => t==="dark" ? "light" : "dark")}>
@@ -168,24 +215,25 @@ export default function Portfolio() {
       <section id="home" className="fade-up" style={{ minHeight:"100vh", display:"flex", flexDirection:"column", justifyContent:"center", padding:P, maxWidth:"1280px", margin:"0 auto", position:"relative" }}>
         <div style={{ display:"flex", alignItems:"center", gap:"14px", marginBottom:"28px" }}>
           <div style={{ width:"36px", height:"1px", background:"var(--a)" }} />
-          <span style={{ color:"var(--at)", fontSize:"11px", letterSpacing:"0.18em", textTransform:"uppercase", fontFamily:"'Syne',sans-serif" }}>Open to new projects</span>
+          <span style={{ color: accentTextColor, fontSize:"11px", letterSpacing:"0.18em", textTransform:"uppercase", fontFamily:"'Syne',sans-serif" }}>Open to new projects</span>
         </div>
 
-        <h1 style={{ fontFamily:"'Syne',sans-serif", fontSize:"clamp(52px,9.5vw,120px)", fontWeight:"800", lineHeight:"0.92", letterSpacing:"-0.025em", marginBottom:"40px" }}>
-          Your<br />
-          <span style={{ color:"var(--at)" }}>Name</span><br />
-          Here.
+        {/* BUG FIX 1: explicit color on h1 */}
+        <h1 style={{ fontFamily:"'Syne',sans-serif", fontSize:"clamp(52px,9.5vw,120px)", fontWeight:"800", lineHeight:"0.92", letterSpacing:"-0.025em", marginBottom:"40px", color: textColor }}>
+          Aan<br />
+          <span style={{ color: accentTextColor }}>Shandy</span><br />
+          Rahesa.
         </h1>
 
         <div style={{ display:"flex", gap:"64px", marginBottom:"48px", flexWrap:"wrap" }}>
-          <p style={{ color:"var(--t2)", fontSize:"16px", lineHeight:"1.75", maxWidth:"440px", fontWeight:"300" }}>
+          <p style={{ color: textColor2, fontSize:"16px", lineHeight:"1.75", maxWidth:"440px", fontWeight:"300" }}>
             Web developer &amp; graphic designer based in Solo, Indonesia. Saya membangun interface yang bersih dan cepat, sekaligus merancang visual identity yang berkesan.
           </p>
           <div style={{ display:"flex", flexDirection:"column", gap:"10px", paddingTop:"4px" }}>
-            {[["Web Dev","React · Next.js · Node.js"],["Design","Branding · UI/UX · Print"]].map(([r,s]) => (
+            {[["Web Dev","Laravel · React · Next.js · Node.js"],["Design","Branding · Poster"]].map(([r,s]) => (
               <div key={r} style={{ display:"flex", gap:"20px" }}>
-                <span style={{ fontSize:"13px", fontWeight:"500", minWidth:"80px" }}>{r}</span>
-                <span style={{ fontSize:"13px", color:"var(--t3)" }}>{s}</span>
+                <span style={{ fontSize:"13px", fontWeight:"500", minWidth:"80px", color: textColor }}>{r}</span>
+                <span style={{ fontSize:"13px", color: textColor3 }}>{s}</span>
               </div>
             ))}
           </div>
@@ -208,32 +256,30 @@ export default function Portfolio() {
       {/* ── ABOUT ─────────────────────────────────────────── */}
       <section id="about" style={{ padding:"100px 52px", maxWidth:"1280px", margin:"0 auto" }}>
         <div className="reveal" style={{ marginBottom:"56px" }}>
-          <div className="snum">01</div>
-          <h2 style={{ fontFamily:"'Syne',sans-serif", fontSize:"30px", fontWeight:"800", marginTop:"-8px" }}>About</h2>
+          {/* BUG FIX 1: explicit color on h2 */}
+          <h2 style={{ fontFamily:"'Syne',sans-serif", fontSize:"30px", fontWeight:"800", marginTop:"-8px", color: textColor }}>About</h2>
         </div>
 
         <div className="agrid reveal d1" style={{ marginBottom:"48px" }}>
-          {/* Bio */}
           <div style={{ display:"flex", flexDirection:"column", gap:"20px" }}>
-            <p style={{ color:"var(--t2)", fontSize:"15px", lineHeight:"1.85", fontWeight:"300" }}>
-              Halo! Saya seorang web developer dan graphic designer yang berbasis di Solo. Saya mulai coding sejak [tahun], dan sejak saat itu terus belajar membangun produk digital yang tidak hanya fungsional tapi juga enak dilihat.
+            <p style={{ color: textColor2, fontSize:"15px", lineHeight:"1.85", fontWeight:"300" }}>
+              Halo! Saya Iann, web developer dan graphic designer yang berbasis di Solo, Jawa Tengah. Mulai serius terjun ke dunia coding sejak 2023, dan terus belajar membangun produk digital yang tidak hanya fungsional tapi juga enak dilihat.
             </p>
-            <p style={{ color:"var(--t2)", fontSize:"15px", lineHeight:"1.85", fontWeight:"300" }}>
-              Di sisi development, saya fokus pada frontend yang performatif dan user-friendly, dengan backend yang solid. Di sisi desain, saya suka menciptakan visual yang bersih tapi punya karakter — dari brand identity hingga UI untuk aplikasi.
+            <p style={{ color: textColor2, fontSize:"15px", lineHeight:"1.85", fontWeight:"300" }}>
+              Di sisi development, saya fokus pada backend berbasis Laravel dan PHP, dengan sentuhan frontend yang bersih. Di sisi desain, saya suka menciptakan visual yang punya karakter dari brand identity hingga UI untuk aplikasi.
             </p>
-            <p style={{ color:"var(--t2)", fontSize:"15px", lineHeight:"1.85", fontWeight:"300" }}>
-              Saya percaya desain yang baik dan kode yang baik bukan dua hal yang terpisah — keduanya harus bekerja bersama untuk menciptakan pengalaman yang solid bagi pengguna.
+            <p style={{ color: textColor2, fontSize:"15px", lineHeight:"1.85", fontWeight:"300" }}>
+              Saya percaya desain yang baik dan kode yang baik bukan dua hal yang terpisah, keduanya harus bekerja bersama untuk menciptakan pengalaman yang solid bagi pengguna.
             </p>
           </div>
 
-          {/* Skills */}
           <div className="sgrid">
             {SKILLS.map(({ cat, items }) => (
               <div key={cat}>
-                <p style={{ fontSize:"10px", letterSpacing:"0.14em", textTransform:"uppercase", color:"var(--at)", fontFamily:"'Syne',sans-serif", fontWeight:"700", marginBottom:"14px" }}>{cat}</p>
+                <p style={{ fontSize:"10px", letterSpacing:"0.14em", textTransform:"uppercase", color: accentTextColor, fontFamily:"'Syne',sans-serif", fontWeight:"700", marginBottom:"14px" }}>{cat}</p>
                 <div style={{ display:"flex", flexDirection:"column", gap:"7px" }}>
                   {items.map(item => (
-                    <span key={item} style={{ fontSize:"13.5px", color:"var(--t2)", fontWeight:"300" }}>{item}</span>
+                    <span key={item} style={{ fontSize:"13.5px", color: textColor2, fontWeight:"300" }}>{item}</span>
                   ))}
                 </div>
               </div>
@@ -241,11 +287,10 @@ export default function Portfolio() {
           </div>
         </div>
 
-        {/* Currently */}
         <div className="reveal d2" style={{ borderTop:"1px solid var(--br)", paddingTop:"28px", display:"flex", gap:"20px", alignItems:"baseline" }}>
-          <span style={{ fontSize:"10px", letterSpacing:"0.14em", textTransform:"uppercase", color:"var(--at)", fontFamily:"'Syne',sans-serif", fontWeight:"700", whiteSpace:"nowrap" }}>Currently</span>
-          <p style={{ color:"var(--t2)", fontSize:"14px", fontWeight:"300", lineHeight:"1.7" }}>
-            Sedang mengeksplorasi [teknologi/topik yang sedang kamu pelajari] dan terbuka untuk proyek freelance baru.
+          <span style={{ fontSize:"10px", letterSpacing:"0.14em", textTransform:"uppercase", color: accentTextColor, fontFamily:"'Syne',sans-serif", fontWeight:"700", whiteSpace:"nowrap" }}>Currently</span>
+          <p style={{ color: textColor2, fontSize:"14px", fontWeight:"300", lineHeight:"1.7" }}>
+            Sedang mengeksplorasi Laravel lebih dalam dan mulai belajar Python untuk AI/ML. Terbuka untuk proyek freelance baru web dev maupun desain.
           </p>
         </div>
       </section>
@@ -256,28 +301,61 @@ export default function Portfolio() {
       <section id="projects" style={{ padding:"100px 52px", maxWidth:"1280px", margin:"0 auto" }}>
         <div className="reveal" style={{ display:"flex", alignItems:"flex-end", justifyContent:"space-between", marginBottom:"48px" }}>
           <div>
-            <div className="snum">02</div>
-            <h2 style={{ fontFamily:"'Syne',sans-serif", fontSize:"30px", fontWeight:"800", marginTop:"-8px" }}>Web Projects</h2>
+            {/* BUG FIX 1: explicit color on h2 */}
+            <h2 style={{ fontFamily:"'Syne',sans-serif", fontSize:"30px", fontWeight:"800", marginTop:"-8px", color: textColor }}>Web Projects</h2>
           </div>
-          <span style={{ color:"var(--t3)", fontSize:"11px", letterSpacing:"0.1em" }}>{PROJECTS.length} PROJECTS</span>
+          <span style={{ color: textColor3, fontSize:"11px", letterSpacing:"0.1em" }}>{PROJECTS.length} PROJECTS</span>
         </div>
 
         <div className="pgrid">
           {PROJECTS.map((p,i) => (
             <div key={p.id} className={`pc reveal d${(i%3)+1}`}>
-              <div style={{ height:"200px", background:`linear-gradient(140deg,${p.bg} 0%,rgba(20,20,20,0.95) 100%)`, position:"relative", overflow:"hidden", display:"flex", alignItems:"center", justifyContent:"center" }}>
-                <div style={{ position:"absolute", inset:0, background:`radial-gradient(ellipse at 25% 65%,${p.ac}18 0%,transparent 60%)` }} />
-                <span style={{ fontFamily:"'Syne',sans-serif", fontSize:"72px", fontWeight:"800", color:`${p.ac}14`, userSelect:"none" }}>
-                  {String(p.id).padStart(2,"0")}
-                </span>
-                <div style={{ position:"absolute", top:"14px", right:"14px", display:"flex", gap:"6px" }}>
+
+              {/* BUG FIX 2: render p.img if exists, fallback to gradient */}
+              <div className="proj-thumb-wrap">
+                {p.img ? (
+                  <>
+                    <img
+                      src={p.img}
+                      alt={p.title}
+                      className="proj-thumb"
+                      onError={e => {
+                        // fallback: hide broken img, show gradient behind
+                        e.currentTarget.style.display = "none";
+                        e.currentTarget.nextSibling.style.opacity = "1";
+                      }}
+                    />
+                    {/* gradient fallback (hidden by default, shown on img error) */}
+                    <div style={{ position:"absolute", inset:0, opacity:0, background:`linear-gradient(140deg,${p.bg} 0%,rgba(30,30,30,0.97) 100%)`, transition:"opacity 0.2s", display:"flex", alignItems:"center", justifyContent:"center" }}>
+                      <div style={{ position:"absolute", inset:0, background:`radial-gradient(ellipse at 25% 65%,${p.ac}18 0%,transparent 60%)` }} />
+                      <span style={{ fontFamily:"'Syne',sans-serif", fontSize:"72px", fontWeight:"800", color:`${p.ac}14`, userSelect:"none" }}>
+                        {String(p.id).padStart(2,"0")}
+                      </span>
+                    </div>
+                  </>
+                ) : (
+                  <div style={{ position:"absolute", inset:0, background:`linear-gradient(140deg,${p.bg} 0%,rgba(30,30,30,0.97) 100%)`, display:"flex", alignItems:"center", justifyContent:"center" }}>
+                    <div style={{ position:"absolute", inset:0, background:`radial-gradient(ellipse at 25% 65%,${p.ac}18 0%,transparent 60%)` }} />
+                    <span style={{ fontFamily:"'Syne',sans-serif", fontSize:"72px", fontWeight:"800", color:`${p.ac}14`, userSelect:"none" }}>
+                      {String(p.id).padStart(2,"0")}
+                    </span>
+                  </div>
+                )}
+
+                {/* dark overlay on top of image for readability of links */}
+                {p.img && <div className="proj-thumb-overlay" />}
+
+                {/* links always on top */}
+                <div style={{ position:"absolute", top:"14px", right:"14px", display:"flex", gap:"6px", zIndex:2 }}>
                   {p.live && <a href={p.live} className="lnk" target="_blank" rel="noreferrer">Live ↗</a>}
                   <a href={p.github} className="lnk" target="_blank" rel="noreferrer">GitHub</a>
                 </div>
               </div>
+
               <div style={{ padding:"22px 24px" }}>
-                <h3 style={{ fontFamily:"'Syne',sans-serif", fontSize:"17px", fontWeight:"700", marginBottom:"8px" }}>{p.title}</h3>
-                <p style={{ color:"var(--t2)", fontSize:"13.5px", lineHeight:"1.65", marginBottom:"18px" }}>{p.desc}</p>
+                {/* BUG FIX 1: explicit color on h3 */}
+                <h3 style={{ fontFamily:"'Syne',sans-serif", fontSize:"17px", fontWeight:"700", marginBottom:"8px", color: textColor }}>{p.title}</h3>
+                <p style={{ color: textColor2, fontSize:"13.5px", lineHeight:"1.65", marginBottom:"18px" }}>{p.desc}</p>
                 <div style={{ display:"flex", gap:"6px", flexWrap:"wrap" }}>
                   {p.tags.map(t => <span key={t} className="tag">{t}</span>)}
                 </div>
@@ -289,39 +367,12 @@ export default function Portfolio() {
 
       <div className="div" />
 
-      {/* ── DESIGN ─────────────────────────────────────────── */}
-      <section id="design" style={{ padding:"100px 52px", maxWidth:"1280px", margin:"0 auto" }}>
-        <div className="reveal" style={{ display:"flex", alignItems:"flex-end", justifyContent:"space-between", marginBottom:"48px" }}>
-          <div>
-            <div className="snum">03</div>
-            <h2 style={{ fontFamily:"'Syne',sans-serif", fontSize:"30px", fontWeight:"800", marginTop:"-8px" }}>Graphic Design</h2>
-          </div>
-          <span style={{ color:"var(--t3)", fontSize:"11px", letterSpacing:"0.1em" }}>{DESIGNS.length} WORKS</span>
-        </div>
-
-        <div className="dcols reveal d1">
-          {DESIGNS.map(d => (
-            <div key={d.id} className="dc">
-              <div style={{ height:`${d.h}px`, background:`linear-gradient(140deg,${d.c2} 0%,${d.c1}2a 100%)`, position:"relative", overflow:"hidden", display:"flex", alignItems:"center", justifyContent:"center" }}>
-                <div style={{ position:"absolute", inset:0, background:`radial-gradient(circle at 65% 35%,${d.c1}40 0%,transparent 65%)` }} />
-                <span style={{ fontFamily:"'Syne',sans-serif", fontSize:"10px", letterSpacing:"0.18em", textTransform:"uppercase", color:"#2a2a2a", zIndex:1 }}>Screenshot</span>
-              </div>
-              <div style={{ padding:"12px 16px", borderTop:"1px solid var(--br)" }}>
-                <p style={{ fontFamily:"'Syne',sans-serif", fontSize:"13px", fontWeight:"600" }}>{d.title}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <div className="div" />
-
       {/* ── CONTACT ─────────────────────────────────────────── */}
       <section id="contact" style={{ padding:"100px 52px 140px", maxWidth:"720px", margin:"0 auto" }}>
         <div className="reveal" style={{ marginBottom:"48px" }}>
-          <div className="snum">04</div>
-          <h2 style={{ fontFamily:"'Syne',sans-serif", fontSize:"30px", fontWeight:"800", marginTop:"-8px" }}>Get in Touch</h2>
-          <p style={{ color:"var(--t2)", fontSize:"15px", marginTop:"10px" }}>Ada proyek yang ingin didiskusikan? Saya siap mendengarnya.</p>
+          {/* BUG FIX 1: explicit color on h2 */}
+          <h2 style={{ fontFamily:"'Syne',sans-serif", fontSize:"30px", fontWeight:"800", marginTop:"-8px", color: textColor }}>Get in Touch</h2>
+          <p style={{ color: textColor2, fontSize:"15px", marginTop:"10px" }}>Ada proyek yang ingin didiskusikan? Saya siap mendengarnya.</p>
         </div>
 
         <div className="reveal d1" style={{ display:"flex", flexDirection:"column", gap:"10px", marginBottom:"40px" }}>
@@ -371,9 +422,9 @@ export default function Portfolio() {
         </div>
 
         <div className="reveal d2" style={{ borderTop:"1px solid var(--br)", paddingTop:"28px" }}>
-          <p style={{ color:"var(--t3)", fontSize:"11px", letterSpacing:"0.1em", textTransform:"uppercase", marginBottom:"14px" }}>Find me on</p>
+          <p style={{ color: textColor3, fontSize:"11px", letterSpacing:"0.1em", textTransform:"uppercase", marginBottom:"14px" }}>Find me on</p>
           <div style={{ display:"flex", gap:"8px", flexWrap:"wrap" }}>
-            {[["GitHub","#"],["LinkedIn","#"],["Dribbble","#"],["Instagram","#"]].map(([l,u]) => (
+            {[["GitHub","https://github.com/Ianvndy"],["LinkedIn","https://www.linkedin.com/in/iann-shandy-569b713a9"],["Instagram","https://www.instagram.com/iannvndy"]].map(([l,u]) => (
               <a key={l} href={u} className="lnk">{l} ↗</a>
             ))}
           </div>
@@ -382,10 +433,10 @@ export default function Portfolio() {
 
       {/* ── FOOTER ─────────────────────────────────────────── */}
       <footer style={{ borderTop:"1px solid var(--br)", padding:"22px 52px", display:"flex", justifyContent:"space-between", alignItems:"center" }}>
-        <span style={{ color:"var(--t3)", fontSize:"12px", fontFamily:"'Syne',sans-serif", fontWeight:"700" }}>
-          YN. {new Date().getFullYear()}
+        <span style={{ color: textColor3, fontSize:"12px", fontFamily:"'Syne',sans-serif", fontWeight:"700" }}>
+          Ianz Dev. {new Date().getFullYear()}
         </span>
-        <span style={{ color:"var(--t3)", fontSize:"12px" }}>Designed &amp; built by me</span>
+        <span style={{ color: textColor3, fontSize:"12px" }}>Designed &amp; built by me</span>
       </footer>
     </div>
   );
