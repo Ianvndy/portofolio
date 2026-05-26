@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import emailjs from '@emailjs/browser';
 
 const DARK = {
   "--bg":  "#1C1C1C", "--bg2": "#242424", "--br":  "#303030",
@@ -115,6 +116,9 @@ export default function Portfolio() {
   const [theme, setTheme]   = useState("dark");
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("home");
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
   const thm = theme === "dark" ? DARK : LIGHT;
 
   useEffect(() => {
@@ -321,11 +325,48 @@ export default function Portfolio() {
         </div>
 
         <div className="reveal d1" style={{ display:"flex", flexDirection:"column", gap:"10px", marginBottom:"40px" }}>
-          <input className="inp" placeholder="Nama kamu" />
-          <input className="inp" placeholder="email@kamu.com" />
-          <textarea className="inp" placeholder="Ceritakan proyekmu..." rows={5} />
+          <input
+            className="inp"
+            placeholder="Nama kamu"
+            value={form.name}
+            onChange={e => setForm({...form, name: e.target.value})}
+          />
+          <input
+            className="inp"
+            placeholder="email@kamu.com"
+            value={form.email}
+            onChange={e => setForm({...form, email: e.target.value})}
+          />
+          <textarea
+            className="inp"
+            placeholder="Ceritakan proyekmu..."
+            rows={5}
+            value={form.message}
+            onChange={e => setForm({...form, message: e.target.value})}
+          />
           <div style={{ paddingTop:"6px" }}>
-            <button className="cta">Kirim Pesan →</button>
+            <button
+              className="cta"
+              onClick={() => {
+                if (!form.name || !form.email || !form.message) return alert("Lengkapi semua field dulu ya!");
+                setSending(true);
+                emailjs.send(
+                  "service_y3eaq1j",
+                  "template_d9283if",
+                  { name: form.name, email: form.email, message: form.message },
+                  "DkrlGV0f1OzDScYz_"
+                ).then(() => {
+                  setSending(false);
+                  setSent(true);
+                  setForm({ name: "", email: "", message: "" });
+                }).catch(() => {
+                  setSending(false);
+                  alert("Gagal kirim, coba lagi.");
+                });
+              }}
+            >
+              {sent ? "Pesan Terkirim ✓" : sending ? "Mengirim..." : "Kirim Pesan →"}
+            </button>
           </div>
         </div>
 
